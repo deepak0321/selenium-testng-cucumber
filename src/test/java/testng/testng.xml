@@ -1,0 +1,7 @@
+<suite name="Test Suite">
+    <test name="DemoTest">
+        <classes>
+            <class name="testng.tests.DynamicWaitsTest"/>
+        </classes>
+    </test>
+</suite>

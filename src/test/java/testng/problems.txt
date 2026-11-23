@@ -1,0 +1,2 @@
+1) TestNGException - suite tag name was not defined
+2) InvalidSelectorException - typo in defining the selector
