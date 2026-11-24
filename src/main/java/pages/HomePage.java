@@ -3,19 +3,17 @@ package pages;
 import org.openqa.selenium.By;
 import utils.ConfigReader;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
-    private final By startPractisingFreeLink = By.cssSelector("[data-testid='hero-start-practicing']");
+    private final By startPracticingFreeLink = By.cssSelector("[data-testid='hero-start-practicing']");
 
-    public void openWebsite(){
-        driver.get(ConfigReader.get("url"));
+    public PracticePage goToPracticePage() {
+        click(startPracticingFreeLink);
+        return new PracticePage();
     }
 
-    public void gotToPracticePage(){
-        click(startPractisingFreeLink);
-    }
     @Override
     public boolean isPageLoaded() {
-        return isVisible(startPractisingFreeLink);
+        return isVisible(startPracticingFreeLink);
     }
 }

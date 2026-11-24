@@ -1,12 +1,8 @@
-<suite name="Test Suite" parallel="tests" thread-count="2">
-    <test name="Demo Test 1">
-        <classes>
-            <class name="testng.tests.DynamicWaitsTest"/>
-        </classes>
-    </test>
+<suite name="Test Suite" parallel="methods" thread-count="4">
     <test name="Demo Test 2">
         <classes>
             <class name="testng.tests.ShadowDomTest"/>
+            <class name="testng.tests.DynamicWaitsTest"/>
         </classes>
     </test>
 </suite>

@@ -1,0 +1,109 @@
+Maven Surefire Plugin is the Plugin that runs the tests during maven test phase. Maven Surefire is included by default in Maven's standard lifecycle.
+
+When you execute: mvn test
+
+Surefire:
+->Finds test classes
+->Creates the test execution environment
+->Runs JUnit/TestNG tests
+->Collects results
+->Generates reports
+
+Surefire = Unit/Functional Test Runner (runs during mvn test)
+Failsafe = Integration Test Runner (runs during mvn verify)
+
+Selenium 4
+Rest Assured 6
+
+Serialization: Convert a Java object into JSON text
+Deserialization: Convert JSON text back into a Java object (POJO). **reconstructing the object
+
+How a Selenium Command Travels to the Browser ?**
+
+Selenium Java library converts your method call into a WebDriver command.
+
+Internally it creates a JSON request.
+
+Selenium 4 uses the W3C WebDriver Standard.
+
+The client sends an HTTP request to the browser driver. Eg( ChromeDriver -> Chrome)
+
+ChromeDriver receives the request and translates the command into instructions Chrome understands.
+
+Chrome searches DOM and finds the element.
+
+Browser returns the unique element ID.
+
+What Selenium Manager Does?
+
+Before Selenium 4.6 , We had to manually download browser driver and Configure them in system.setproperty
+
+Problems: driver version mismatch, ci/cd failures, manual maintenance
+
+Selenium manager automatically detects browser version, downloads matching driver, stores in cache, updates when needed.
+
+Chrome Starts
+
+↓
+
+Selenium Manager checks version
+
+↓
+
+Find matching ChromeDriver
+
+↓
+
+Download if absent
+
+↓
+
+Cache driver
+
+↓
+
+Launch browser
+
+Selenium Manager automatically discovers browser versions, downloads compatible driver binaries, caches them locally, and eliminates manual driver management.
+
+CSS vs XPATH selectors ?
+
+CSS selectors are generally faster and more readable, while XPath is more powerful and supports traversing the DOM in multiple directions using axes.
+
+Axes allow navigation relative to another element.
+
+Absolute XPath depends on the exact DOM hierarchy and breaks whenever developers change the page structure. Relative XPath is more stable because it identifies elements using attributes, text, or relationships rather than fixed positions.
+
+WAITS IN SELENIUM
+
+Implicit wait tells Selenium:
+
+"Keep trying to find an element for up to X seconds before throwing NoSuchElementException."
+
+Characteristics
+✅ Global
+✅ Applied to all findElement()
+✅ Set once
+❌ Cannot wait for conditions like clickable/visible
+❌ Hard to control
+
+Explicit wait waits for a specific condition to become true before proceeding.
+
+Fluent Wait is an advanced Explicit Wait
+Allows:
+Custom polling interval
+Ignoring exceptions
+
+Why Mixing Implicit and Explicit Waits Causes Problems?
+Explicit wait repeatedly calls findElement(), and if an implicit wait is also configured, each poll may wait for the implicit timeout. This leads to compounded and unpredictable wait durations.
+Why Thread.sleep() Is NOT a Wait?
+Why Hate Thread.sleep()
+
+❌ Slower execution
+❌ Increases suite runtime
+❌ Flaky tests
+❌ Doesn't handle dynamic applications
+❌ Not intelligent
+
+Acceptable: Temporary workaround
+Not inside production frameworks.

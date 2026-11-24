@@ -8,12 +8,14 @@ public class PracticePage extends BasePage {
     private final By dynamicWaitsLink = By.cssSelector("[data-testid='new-practice-card-dynamic-waits']");
     private final By shadowDOMLink = By.cssSelector("[data-testid='new-practice-card-shadow-dom']");
 
-    public void goToDynamicWaits() {
+    public DynamicWaitsPage goToDynamicWaits() {
         click(dynamicWaitsLink);
+        return new DynamicWaitsPage();
     }
 
-    public void goToShadowDOM() {
+    public ShadowDomPage goToShadowDOM() {
         click(shadowDOMLink);
+        return new ShadowDomPage();
     }
 
     @Override
