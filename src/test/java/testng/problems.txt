@@ -1,2 +1,4 @@
 1) TestNGException - suite tag name was not defined
 2) InvalidSelectorException - typo in defining the selector
+3) UnreachableBrowserException -> Running in parallel without ThreadLocal WebDriver
+4) ElementClickInterceptedException -> Intercepting Element While Clicking

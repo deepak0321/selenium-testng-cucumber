@@ -7,18 +7,18 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties prop = new Properties();
+    private static Properties properties = new Properties();
 
     static {
         try {
             FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
-            prop.load(fis);
+            properties.load(fis);
         } catch (Exception e) {
             System.out.println("Exception Reading File - "+e.getLocalizedMessage());
         }
     }
 
     public static String get(String key) {
-        return prop.getProperty(key);
+        return properties.getProperty(key);
     }
 }

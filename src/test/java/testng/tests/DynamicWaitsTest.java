@@ -11,7 +11,6 @@ public class DynamicWaitsTest extends BaseTest {
 
     @Test
     public void dynamicWaitsTest() throws InterruptedException {
-
         HomePage homePage = new HomePage();
         homePage.openWebsite();
         Assert.assertTrue(homePage.isPageLoaded());
@@ -21,7 +20,10 @@ public class DynamicWaitsTest extends BaseTest {
         practicePage.goToDynamicWaits();
         DynamicWaitsPage dynamicWaitsPage = new DynamicWaitsPage();
         Assert.assertTrue(dynamicWaitsPage.isPageLoaded());
-
+        dynamicWaitsPage.checkDelayedAppearance();
+        dynamicWaitsPage.checkDelayedSpinner();
+        dynamicWaitsPage.checkButtonEnableAndClickable();
+        Assert.assertEquals(dynamicWaitsPage.checkFlakyElement(),"⚡ Race element visible — catch me!");
 
     }
 }
