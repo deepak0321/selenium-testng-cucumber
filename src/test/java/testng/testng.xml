@@ -3,6 +3,7 @@
         <classes>
             <class name="testng.tests.ShadowDomTest"/>
             <class name="testng.tests.DynamicWaitsTest"/>
+            <class name="testng.tests.FormsTest"/>
         </classes>
     </test>
 </suite>

@@ -7,6 +7,12 @@ public class PracticePage extends BasePage {
 
     private final By dynamicWaitsLink = By.cssSelector("[data-testid='new-practice-card-dynamic-waits']");
     private final By shadowDOMLink = By.cssSelector("[data-testid='new-practice-card-shadow-dom']");
+    private final By formsLink = By.cssSelector("[data-testid='new-practice-card-forms']");
+
+    public FormsPage goToForms(){
+        click(formsLink);
+        return new FormsPage();
+    }
 
     public DynamicWaitsPage goToDynamicWaits() {
         click(dynamicWaitsLink);

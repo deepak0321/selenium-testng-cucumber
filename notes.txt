@@ -107,3 +107,19 @@ Why Hate Thread.sleep()
 
 Acceptable: Temporary workaround
 Not inside production frameworks.
+
+TestNG (Test Next Generation) is a Java testing framework used to organize, execute, and report tests.
+
+Selenium = Interacts with Browser
+TestNG   = Controls Test Execution
+
+Key Features :
+annotations -> control execution flow
+Test Priorities
+Grouping Tests
+Run same test with multiple datasets.
+Assertions
+Parallel Execution
+Listeners
+
+TestNG is a Java testing framework that works with Selenium to manage test execution. Selenium is responsible for browser automation, while TestNG provides test organization, annotations, assertions, parallel execution, data-driven testing through DataProviders, grouping, reporting, and listener support. In automation frameworks, TestNG acts as the test runner and Selenium acts as the browser automation tool.
